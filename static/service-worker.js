@@ -1,10 +1,11 @@
-// static/service-worker.js
 const CACHE_NAME = 'pwa-cache-v1';
 const urlsToCache = [
     '/',
     '/static/manifest.json',
     '/static/app.js',
-    '/static/icon.png'
+    '/static/styles.css',
+    '/static/leaf-192x192.png',
+    '/static/leaf-512x512.png'
 ];
 
 self.addEventListener('install', event => {
