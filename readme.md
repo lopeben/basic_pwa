@@ -104,12 +104,41 @@ A Progressive Web App (PWA) using Python Flask for the server and JavaScript for
        );
    });
    ```
+### Create an environment
 
+1. **Create a venv environment in the project directory**:
+    ```bash
+    python3 -m venv .venv-name_of_your_env
+    ```
+
+2. **Activate the virtual environment**:
+    ```bash
+    source .venv-name_of_your_env/bin/activate
+    ``` 
+3. **Install the required modules in the virtual environemnt**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Install and configure authbind
+
+1. **Download and install**:
+    ```bash 
+    sudo apt install authbind
+    ```
+2. **Configure user access on port 443**:
+    ```bash
+    sudo touch /etc/authbind/byport/443
+    sudo chown <username> /etc/authbind/byport/443
+    sudo chmod 755 /etc/authbind/byport/443
+    ```
+    
 ### Running the App
 
 1. **Run the Flask server**:
    ```bash
-   python app.py
+   source .venv-name_of_your_env/bin/activate
+   authbind --deep python -u app.py
    ```
 
 2. **Access the app**:
